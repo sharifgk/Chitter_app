@@ -13,7 +13,7 @@ function App() {
       <Navigation />
       <div className='container'>
         <Routes>
-          <Route path="/" element={<><PeepForm /><PeepList /></>} />
+          <Route path="/" element={<><PeepList /><PeepForm /></>} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/signup" element={<SignUpForm />} />
         </Routes>
