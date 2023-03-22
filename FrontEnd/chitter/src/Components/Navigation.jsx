@@ -5,7 +5,7 @@ const Navigation = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container">
-                <NavLink className="navbar-brand" to="/">Chitter</NavLink>
+                <NavLink className="navbar-brand" to="/">Chitter 🦜</NavLink>
                 <button
                     className="navbar-toggler"
                     type="button"
