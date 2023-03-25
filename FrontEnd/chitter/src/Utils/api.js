@@ -18,3 +18,13 @@ export const signup = async (data) => {
         return { error: e.code, errorMessage: e.message };
     }
 };
+
+export const login = async (data) => {
+    try {
+        console.log(data);
+        const response = await axios.post(URL + 'login', data);
+        return response.data
+    } catch (e) {
+        return { error: e.code, errorMessage: e.message };
+    }
+};
