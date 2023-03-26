@@ -19,9 +19,14 @@ function App() {
     updateLogInStatus();
   }, []);
 
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    setLoggedIn(false);
+  };
+
    return (
     <Router>
-      <Navigation />
+      <Navigation loggedIn={loggedIn} onLogout={handleLogout} />
       <Routes>
         <Route path="/" element={
           <div className="container">
