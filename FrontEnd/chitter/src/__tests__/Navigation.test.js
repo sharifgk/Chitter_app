@@ -4,14 +4,14 @@ import '@testing-library/jest-dom';
 import { MemoryRouter } from 'react-router-dom';
 import Navigation from '../Components/Navigation';
 
-test('renders Chitter brand', () => {
+test('renders Chitter logo/link', () => {
   render(
     <MemoryRouter>
       <Navigation loggedIn={false} />
     </MemoryRouter>
   );
-  const brandElement = screen.getByText('Chitter 🦜');
-  expect(brandElement).toBeInTheDocument();
+  const chitterLogo = screen.getByText('Chitter 🦜');
+  expect(chitterLogo).toBeInTheDocument();
 });
 
 test('renders Login and Sign Up links when not logged in', () => {
@@ -20,10 +20,10 @@ test('renders Login and Sign Up links when not logged in', () => {
       <Navigation loggedIn={false} />
     </MemoryRouter>
   );
-  const loginLinkElement = screen.getByText('Login');
-  const signUpLinkElement = screen.getByText('Sign Up');
-  expect(loginLinkElement).toBeInTheDocument();
-  expect(signUpLinkElement).toBeInTheDocument();
+  const loginLink = screen.getByText('Login');
+  const signUpLink = screen.getByText('Sign Up');
+  expect(loginLink).toBeInTheDocument();
+  expect(signUpLink).toBeInTheDocument();
 });
 
 test('renders Log out button when logged in', () => {
@@ -33,6 +33,6 @@ test('renders Log out button when logged in', () => {
       <Navigation loggedIn={true} onLogout={mockLogout} />
     </MemoryRouter>
   );
-  const logoutButtonElement = screen.getByText('Log out');
-  expect(logoutButtonElement).toBeInTheDocument();
+  const logoutButton = screen.getByText('Log out');
+  expect(logoutButton).toBeInTheDocument();
 });
