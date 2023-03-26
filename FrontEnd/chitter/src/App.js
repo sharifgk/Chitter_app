@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navigation from './Components/Navigation.jsx';
 import LoginForm from './Components/LoginForm.jsx';
@@ -10,6 +10,11 @@ import './App.css';
 function App() {
 
   const [loggedIn, setLoggedIn] = useState(false);
+  const [peepListKey, setPeepListKey] = useState(0);
+
+  const refreshPeepList = useCallback(() => {
+    setPeepListKey(prevKey => prevKey + 1);
+  }, []);
 
   const updateLogInStatus = () => {
     setLoggedIn(!!localStorage.getItem('token'));
@@ -31,8 +36,8 @@ function App() {
         <Route path="/" element={
           <div className="container">
              <h2>Welcome to Chitter!</h2>
-             <PeepList />
-            {loggedIn && <PeepForm />}
+             <PeepList key={peepListKey}/>
+            {loggedIn && <PeepForm onPeepCreated={refreshPeepList} />}
           </div>
         } />
          <Route path="/login" element={<LoginForm onLogin={updateLogInStatus} />} />

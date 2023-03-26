@@ -37,3 +37,23 @@ export const getAllPeeps = async () => {
         return { error: error.code, errorMessage: error.message };
     }
 };
+
+export const createPeep = async (data) => {
+    try {
+        const response = await axios.post(URL + '/peeps', data);
+        return response.data;
+    } catch (error) {
+        return { error: error.code, errorMessage: error.message };
+    }
+}
+
+export const getUserInfo = async (token) => {
+    try {
+        const response = await axios.get(URL + '/users/info', {
+            headers: { Authorization: `Bearer ${token}` },
+        });
+        return response.data;
+    } catch (error) {
+        return { error: error.code, errorMessage: error.message };
+    }
+};
