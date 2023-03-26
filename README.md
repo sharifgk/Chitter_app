@@ -5,7 +5,8 @@
  2. `npm install` in `/chitter-challenge/BackEnd/` and `chitter-challenge/FrontEnd/chitter/`
  3. `npm run` in the backend folder first, then in the frontend. The webpage should open up.
  4. You should then be able to: 
-		 - See the Chitter homepage with peeps from the DB being displayed.
+		
+- See the Chitter homepage with peeps from the DB being displayed.
     
  - Signup
 
