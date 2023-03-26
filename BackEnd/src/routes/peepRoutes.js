@@ -3,6 +3,6 @@ const router = express.Router();
 const peepController = require('../controllers/peepController.js');
 
 router.post('/', peepController.createPeep);
-router.post('/', peepController.getAllPeeps);
+router.get('/', peepController.getAllPeeps);
 
 module.exports = router;
