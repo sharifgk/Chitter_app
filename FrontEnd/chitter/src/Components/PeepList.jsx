@@ -1,28 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PeepItem from "./PeepItem";
+import { getAllPeeps } from "../Utils/api.js";
 
 const PeepList = () => {
-    const peeps = [
-        {
-            id: `1`,
-            user: `Bob`,
-            content: `Hello World!`,
-            timestamp: `2023-03-14T10:30:00.000Z`,
-        },
-        {
-            id: `2`,
-            user: `Yeet`,
-            content: `Wow amazing things!`,
-            timestamp: `2023-03-14T10:00:00.000Z`,
-        },
-    ];
+    const [peeps, setPeeps] = useState([]);
+
+    useEffect(() => {
+        const fetchPeeps = async () => {
+           try {
+               const fetchedPeeps = await getAllPeeps();
+               if (Array.isArray(fetchedPeeps)) {
+                   setPeeps(fetchedPeeps);
+               } else {
+                   console.log('fetched data is not an array:', fetchedPeeps);
+               }
+           } catch (error) {
+               console.error('error fetching peeps', error);
+           }
+        }
+
+        fetchPeeps();
+    }, []);
+
 
     return (
         <div className="container">
-            <h2>Peeps</h2>
+            <h2>Timeline</h2>
             <ul className="list-group">
                 {peeps.map((peep) => (
-                    <PeepItem key={peep.id} peep={peep} />
+                    <PeepItem key={peep._id} peep={peep} />
                 ))}
             </ul>
         </div>

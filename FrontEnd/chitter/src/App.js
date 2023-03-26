@@ -30,7 +30,7 @@ function App() {
       <Routes>
         <Route path="/" element={
           <div className="container">
-             <h2>Peeps</h2>
+             <h2>Welcome to Chitter!</h2>
              <PeepList />
             {loggedIn && <PeepForm />}
           </div>
