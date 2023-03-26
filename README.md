@@ -6,10 +6,17 @@
  3. `npm run` in the backend folder first, then in the frontend. The webpage should open up.
  4. You should then be able to: 
 		 - See the Chitter homepage with peeps from the DB being displayed.
-		 - Signup
-		 - Login and be redirected to home, now with a peep form available to you
-		 - you can now post a peep and it should appear on the timeline.
+    
+ - Signup
 
+      		 
+
+ - Login and be redirected to home, now with a peep form available to
+   you
+
+      		
+
+ - you can now post a peep and it should appear on the timeline.
 
 
 
