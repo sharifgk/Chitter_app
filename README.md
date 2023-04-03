@@ -1,5 +1,5 @@
  
-[demo](https://github.com/sharifgk/Chitter_app/blob/4ffe4f777a2963f397f01fa8656f03663e0cb236/ezgif.com-video-to-gif.gif)
+![](https://github.com/sharifgk/Chitter_app/blob/main/ezgif.com-video-to-gif.gif)
 
 
 # Instructions
